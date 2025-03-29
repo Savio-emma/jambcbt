@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster - Test Your Knowledge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="https://scontent-los2-1.xx.fbcdn.net/v/t39.30808-6/236870363_109906451401498_4620408936663517254_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeF-MPBMXlZ7baI4qB_ERegZqFjzPbLeQEeoWPM9st5AR-h7H9uHr05cAPrNJlNnziaLVYL6otRb8Hu-IaoL4AK5&_nc_ohc=L8PznbRpZSYQ7kNvgGKjoUk&_nc_oc=AdlNYJVXxagQtKZmZey8Yl502b717JKENld0aw7EhKPaRQgkdqyQtWwp6ZwPG7hgf88&_nc_zt=23&_nc_ht=scontent-los2-1.xx&_nc_gid=iLbuRuIANuuMLy2pXTHVlw&oh=00_AYFt3M-CQquRwBnQWnTRGf5Bbf8F53N3iL4teTvuoMno0A&oe=67ED21C2" alt="Quiz Icon" class="quiz-image">
+        <div class="welcome-note">
+            <h1>Welcome chy 😁</h1>
+            <p>Your hard work and dedication have prepared you for this momemt. Go and crush it🥇. Select your exam year to begin!</p>
+        </div>
+
+        <details>
+            <summary>Click to Start</summary>
+            <ul class="years-list">
+                <li data-year="2018">2018</li>
+                <li data-year="2019">2019</li>
+                <li data-year="2020">2020</li>
+                <li data-year="2021">2021</li>
+                <li data-year="2022">2022</li>
+                <li data-year="2024">2024</li>
+            </ul>
+        </details>
+
+        <div class="modal-overlay">
+            <div class="instruction-modal">
+                <h2>Exam Instructions</h2>
+                <ul style="margin: 1rem 0; list-style-position: inside;">
+                    <li style="margin: 1rem 0;">Total time: 2 hours</li>
+                    <li style="margin: 1rem 0;">180 Multiple Choice Questions</li>
+                    <li style="margin: 1rem 0;">corrections are given only for answered question</li>
+                    <li style="margin: 1rem 0;">flexible switching between questions</li>
+                </ul>
+                <div class="modal-links">
+                    <a href="#" class="go-back">Go Back</a>
+                    <a href="#" class="proceed" id="proceed-btn">Proceed</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const years = document.querySelectorAll('.years-list li');
+        const modalOverlay = document.querySelector('.modal-overlay');
+        const goBackBtn = document.querySelector('.go-back');
+        const proceedBtn = document.getElementById('proceed-btn');
+        let selectedYear = null;
+
+        years.forEach(year => {
+            year.addEventListener('click', () => {
+                selectedYear = year.getAttribute('data-year');
+                modalOverlay.style.display = 'flex';
+            });
+        });
+
+        proceedBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if(selectedYear) {
+                window.location.href = `jamb${selectedYear}.html`; // Modify this URL pattern as needed
+            }
+        });
+
+        goBackBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            modalOverlay.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) {
+                modalOverlay.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

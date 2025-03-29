@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f4f4;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#timer {
+    font-size: 1.2em;
+    color: #d9534f;
+}
+
+.subject-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.tab.active {
+    background: #5cb85c;
+    color: #fff;
+}
+
+#quiz-container {
+    margin-bottom: 20px;
+}
+
+#question {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+#options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    padding: 10px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.option.selected {
+    background: #5cb85c;
+    color: #fff;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background: #0275d8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: #ccc;
+}
+
+#question-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.grid-item {
+    width: 40px;
+    height: 40px;
+    background: #ddd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.grid-item.answered {
+    background: #5cb85c;
+    color: #fff;
+}
+
+#submit {
+    background: #d9534f;
+    width: 100%;
+}
+
+/* Updated Result Section Styling */
+#result {
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#result h2 {
+    font-size: 1.8em;
+    color: #0275d8;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#score {
+    font-size: 1.3em;
+    color: #5cb85c;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#remark {
+    font-size: 1.2em;
+    color: #d9534f;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#result h3 {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #0275d8;
+    padding-bottom: 5px;
+}
+
+#missed-questions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#missed-questions p {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    line-height: 1.5;
+    color: #333;
+}
+
+#missed-questions p span {
+    display: block;
+    margin-top: 5px;
+}
+
+#missed-questions p span:first-child {
+    font-weight: bold;
+    color: #d9534f; /* Highlight subject in red */
+}
+
+#missed-questions p span:nth-child(2) {
+    color: #0275d8; /* Question in blue */
+}
+
+#missed-questions p span:nth-child(3) {
+    color: #5cb85c; /* Correct answer in green */
+}
+
+#missed-questions p span:nth-child(4) {
+    color: #d9534f; /* Chosen answer in red */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .subject-tabs {
+        flex-wrap: wrap;
+    }
+
+    #question-grid {
+        grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+    }
+
+    #result h2 {
+        font-size: 1.5em;
+    }
+
+    #score, #remark {
+        font-size: 1.1em;
+    }
+
+    #result h3 {
+        font-size: 1.2em;
+    }
+
+    #missed-questions p {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+}
+
+.Home{
+    cursor: pointer;
+}
+
+#question-image img{
+    height: 100px;
+    max-width: 90vb;
+}
+
+#goback{
+    margin-bottom: 50px;
+    padding: 10px 20px;
+    background: #0275d8;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}

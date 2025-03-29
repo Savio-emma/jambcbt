@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBT Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>CBT Quiz 2019</h1>
+            <div id="timer">Time Left: 120:00</div>
+        </div>
+
+        <div class="subject-tabs">
+            <button class="tab active" data-subject="english">English</button>
+            <button class="tab" data-subject="physics">Physics</button>
+            <button class="tab" data-subject="chemistry">Chemistry</button>
+            <button class="tab" data-subject="biology">Biology</button>
+        </div>
+
+        <div id="quiz-container">
+            <div id="question-image"></div>
+            <div id="question"></div>
+            <div id="options"></div>
+            <div class="navigation">
+                <button id="prev">Previous</button>
+                <button id="next">Next</button>
+            </div>
+        </div>
+
+        <div id="question-grid"></div>
+        <button id="submit">Submit Quiz</button>
+
+        <div id="result" style="display: none;">
+            <h2>Your Result</h2>
+            <p id="score"></p>
+            <p id="remark"></p>
+            <h3>Missed Questions</h3>
+            <div id="missed-questions"></div>
+        </div>
+    </div>
+
+
+    
+    <button id="goback">⬅</button>
+ 
+    <script src="script/question2019.js"></script>
+    <script src="script/script.js"></script>
+</body>
+</html>
